@@ -10,7 +10,9 @@ const Blogs = () => {
       "accessToken"
     )}`;
     const res = await axios
-      .get("http://localhost:5000/api/blog", { headers: header })
+      .get("https://ps-blogappserver.onrender.com/api/blog", {
+        headers: header,
+      })
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;
