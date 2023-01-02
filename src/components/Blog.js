@@ -22,7 +22,9 @@ const Blog = ({ isuser, title, description, imageURL, userName, id }) => {
   const header = `authorization: Bearer ${localStorage.getItem("accessToken")}`;
   const deleteRequest = async () => {
     const res = await axios
-      .delete(`http://localhost:5000/api/blog/${id}`, { headers: header })
+      .delete(`https://ps-blogappserver.onrender.com/api/blog/${id}`, {
+        headers: header,
+      })
       .catch((err) => console.log(err));
     const data = await res.data;
     console.log(data);
