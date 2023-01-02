@@ -11,7 +11,9 @@ const BlogDetails = () => {
   };
   const fetchDetails = async () => {
     const res = await axios
-      .get(`http://localhost:5000/api/blog/${id}`, { headers: header })
+      .get(`https://ps-blogappserver.onrender.com/api/blog/${id}`, {
+        headers: header,
+      })
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;
@@ -32,7 +34,7 @@ const BlogDetails = () => {
   const sendRequest = async () => {
     const res = await axios
       .put(
-        `http://localhost:5000/api/blog/update/${id}`,
+        `https://ps-blogappserver.onrender.com/api/blog/update/${id}`,
         {
           title: inputs.title,
           description: inputs.description,
