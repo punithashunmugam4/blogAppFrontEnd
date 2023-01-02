@@ -9,7 +9,9 @@ const UserBlogs = () => {
   const header = `Authorization: Bearer ${localStorage.getItem("accessToken")}`;
   const sendRequest = async () => {
     const res = await axios
-      .get(`http://localhost:5000/api/blog/user/${id}`, { headers: header })
+      .get(`https://ps-blogappserver.onrender.com/api/blog/user/${id}`, {
+        headers: header,
+      })
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;
