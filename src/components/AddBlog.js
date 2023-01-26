@@ -30,7 +30,7 @@ const AddBlog = () => {
         { headers: header }
       )
       .catch((err) => console.log(err));
-    const data = await res.json();
+    const data = await res.data;
     return data;
   };
   const handleSubmit = async (e) => {
